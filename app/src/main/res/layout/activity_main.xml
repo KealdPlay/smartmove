@@ -9,6 +9,40 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <!-- Top Bar with Spinner and Logo -->
+    <LinearLayout
+        android:id="@+id/topBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="8dp"
+        android:background="#222222"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Route Selector Spinner -->
+        <Spinner
+            android:id="@+id/route_selector"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_gravity="start|center_vertical"
+            android:padding="4dp"
+            android:background="@android:drawable/btn_dropdown"
+            android:spinnerMode="dropdown" />
+
+        <!-- Logo Space -->
+        <ImageView
+            android:id="@+id/logo_image"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_gravity="end|center_vertical"
+            android:contentDescription="@string/app_logo"
+            android:src="@drawable/ic_launcher_foreground"/>
+
+    </LinearLayout>
+
     <fragment
         android:id="@+id/map"
         android:name="com.google.android.gms.maps.SupportMapFragment"
@@ -20,7 +54,7 @@
         app:layout_constraintBottom_toTopOf="@+id/coordinatesLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/topBar"
         map:cameraZoom="15"
         map:uiRotateGestures="true"
         map:uiZoomControls="true"

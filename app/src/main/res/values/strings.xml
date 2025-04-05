@@ -1,3 +1,10 @@
 <resources>
     <string name="app_name">SmartMoveCX</string>
+    <string name="app_logo">App Logo</string>
+    <string name="route_50">Route 50</string>
+    <string name="route_b">Route B</string>
+    <string-array name="route_options">
+        <item>@string/route_50</item>
+        <item>@string/route_b</item>
+    </string-array>
 </resources>
